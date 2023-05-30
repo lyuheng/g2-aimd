@@ -182,6 +182,12 @@ public:
         for (int i = 0; i < view_bin_num_; i++)
             std::cout << view_bin_pool_[i]->GetId() << " " << view_bin_pool_[i]->GetComputationFactors() << std::endl;
     }
+    void SortSources(){
+        for(auto &vb: view_bin_pool_){
+            vb->SortSources();
+        }
+    }
+
 
 private:
     Graph *graph_;

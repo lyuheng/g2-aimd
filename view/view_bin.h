@@ -157,7 +157,10 @@ public:
         timer.EndTimer();
         timer.PrintElapsedMicroSeconds("view bin materialized " + std::to_string(view_bin_id_));
     }
-
+    
+    void SortSources(){
+        std::sort(sources_.begin(), sources_.end());
+    }
 private:
     // data graph
     Graph *graph_;

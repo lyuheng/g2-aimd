@@ -40,6 +40,7 @@ public:
         int do_reorder = cmd.GetOptionIntValue("-dr", 0);
         int do_split = cmd.GetOptionIntValue("-ds", 0);
         int do_split_times = cmd.GetOptionIntValue("-dst", 1);
+        int sort_sources = cmd.GetOptionIntValue("-ss", 0);
 
         int gpu_count = 0;
         cudaGetDeviceCount(&gpu_count);
@@ -164,6 +165,8 @@ public:
         ViewBinManager *vbm = new ViewBinManager(graph, hop, thread_num);
         std::string partition_file = data_filename + "." + std::to_string(hop) + ".hop.vbmap";
         vbm->LoadViewBinPartition(partition_file);
+        if (sort_sources)
+            vbm->SortSources();
         if (do_reorder)
             vbm->Reorder();
         if (do_split)
