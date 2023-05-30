@@ -1,1 +1,0 @@
-git pull https://lyuheng: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@github.com/lyuheng/multi-gpu-dev
