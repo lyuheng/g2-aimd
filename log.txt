@@ -1,8 +1,0 @@
-
-1. kmeans ++ 的下一个起始点是找每个点到最similar(maximum sim)的起始点中最远的(least sim)\
-
-2. max_similarities[] is accumulated. No need to compute sim repetitively.
-
-3. kmeans 2x的reverse那里可能是希望 c0 c1 c2 c3 中c1和c2距离比较近？
-
-4. ISFULL() 判断的只是某个bin的size已经很大了，不能再加入新的点了，所以就从index里移除，不是真的移除这个bin
