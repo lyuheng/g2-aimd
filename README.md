@@ -1,4 +1,4 @@
-# G2-thinker: A Multi-GPU Parallel Framework for Efficient Subgraph Search in a Big Graph
+# G2-thinker: An Efficient GPU Framework for Subgraph Search
 
 ## Application 1: Maximal Clique Enumeration
 
