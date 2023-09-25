@@ -1,4 +1,4 @@
-# G2-thinker: An Efficient GPU Framework for Subgraph Search
+# G2-aimd: An Efficient GPU Framework for Subgraph Search
 
 ## Application 1: Maximal Clique Enumeration
 
