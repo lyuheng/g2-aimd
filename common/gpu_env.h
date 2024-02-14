@@ -54,11 +54,11 @@
 // in general it should be the size of max degree of supported graph
 #define TEMPSIZE 100'000
 
-// #define HOST_BUFF_SZ 20'000'000'000ULL
-// #define HOST_OFFSET_SZ 1'000'000'000ULL
+#define HOST_BUFF_SZ 20'000'000'000ULL
+#define HOST_OFFSET_SZ 1'000'000'000ULL
 
-#define HOST_BUFF_SZ 20
-#define HOST_OFFSET_SZ 1
+// #define HOST_BUFF_SZ 20
+// #define HOST_OFFSET_SZ 1
 
 // Reduction and Increment factors
 #define DECFACTOR 8
