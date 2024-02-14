@@ -151,10 +151,7 @@ public:
     void Run()
     {
         app.sg->chunk[0] = MAXCHUNK;
-        // ! for testing purpose skipping some vertices now. surely it should begin from 0
         unsigned int i = 0;
-        // cout<<"Enter nodes to skip: ";
-        // cin>>i;
         for (; i < app.ctx->sources_num[0];)
         {
             app.ctx->level[0] = 1;
