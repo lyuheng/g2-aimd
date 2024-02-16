@@ -44,5 +44,5 @@ wikipedia-edit-en
 com-friendster
 '
 for ds in {1..10}; do
-   ./bk-a100 -dg ~/DataBank/wikipedia-link-de.bin -h 2 -cn 2 -pn 2 -qs 2 -ss 1 -t 2 > sim-a100/wikipedia-link-de-$ds.out 
+   ./bk-a100 -dg ~/DataBank/wikipedia-edit-en.bin -h 2 -cn 2 -pn 2 -qs 2 -ss 1 -t 2 > sim-a100/wikipedia-edit-en-$ds.out 
 done
