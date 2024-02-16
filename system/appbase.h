@@ -107,6 +107,7 @@ public:
         free -= 500'000'000 + reserved_mem;
         cout<<"Remaining : "<<free<<endl;
         free -= 40'000'000'000;
+        cout<<"out of 40gb Remaining : "<<free<<endl;
 
         // sum of all the attributes size, multiply by 2, as there are two buffers...
         size_t alloc = free / (2 * sz);
