@@ -35,14 +35,14 @@ wiki-it
 wikipedia-edit-pt
 wikipedia-dynamic-fr
 stackoverflow
-wikipedia-link-de
-com-orkut 
+com-orkut
 dbpedia-link
 orkut-groupmemberships
-wikipedia-link-en
-wikipedia-edit-en
 com-friendster
 '
-for ds in {1..10}; do
-   ./bk-a100 -dg ~/DataBank/wikipedia-edit-en.bin -h 2 -cn 2 -pn 2 -qs 2 -ss 1 -t 2 > sim-a100/wikipedia-edit-en-$ds.out 
+
+for ds in $datasets; do
+for i in {1..5}; do
+   ./bk-a100 -dg ~/DataBank/$ds.bin -h 2 -cn 2 -pn 2 -qs 2 -ss 1 -t 2 > sim-a100/$ds-$i.out
+done
 done
