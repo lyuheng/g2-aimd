@@ -1,0 +1,51 @@
+#!/bin/bash
+# normal command for interactive session: srun --ntasks=2 --cpus-per-task=1 --mem-per-cpu=64000 --time=12:00:00 --partition=pascalnodes --job-name=GG --gres=gpu:1 --pty /bin/bash
+#SBATCH --share
+#SBATCH --partition=pascalnodes
+#
+# Name your job to make it easier for you to track
+#
+#SBATCH --job-name=sim-a100
+#
+# Set your error and output files
+#
+#SBATCH --error=prep.err
+#SBATCH --output=prep.out
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --gres=gpu:0
+# Tell the scheduler only need 10 minutes
+#
+#SBATCH --time=12:00:00
+#SBATCH --mem-per-cpu=220000
+#
+# Set your email address and request notification when you job is complete or if it fails
+#
+#SBATCH --mail-type=END
+#SBATCH --mail-user=akhlaque.ak@gmail.com
+module load gcc
+alias python=python3
+
+
+module load cuda11.4/toolkit
+module load GCC/11.4.0
+
+datasets='
+wiki-it
+wikipedia-edit-pt
+wikipedia-dynamic-fr
+stackoverflow
+wikipedia-link-de
+com-orkut
+dbpedia-link
+orkut-groupmemberships
+wikipedia-link-en
+wikipedia-edit-en
+com-friendster
+'
+
+for ds in $datasets; do
+./preprocess -f ~/DataBank/$ds.txt > sim/$ds-prep.out
+./kmeans -f ~/DataBank/$ds.bin > sim/$ds-kmeans.out
+./view_pack -gf ~/DataBank/$ds.bin -pf ~/DataBank/$ds.bin.kmeans.4 -t 4 > sim/$ds-viewpack.out
+done
