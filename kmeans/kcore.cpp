@@ -234,20 +234,24 @@ int main(int argc, char *argv[])
     std::string filename = cmd.GetOptionValue("-f", "../data/com-dblp.ungraph.txt");
     ui nbins = cmd.GetOptionIntValue("-nb", 1);
     std::string binfile = filename.substr(0, filename.rfind(".")) + ".bin";
-
+        Timer timer;
+    timer.StartTimer();
     std::cout << "Loading Started" << std::endl;
     Graph g(filename);
     std::cout << "Loading Done" << std::endl;
 
     Degeneracy deg(g);
     deg.degenerate(); // performs KCore Decomposition, and rec is sorted in degeneracy order
-#if DEGREESORT == 1
-    deg.degreeSort(); // sorts the vertices based on degrees, within the degeneracy order
-#endif
+// #if DEGREESORT == 1
+//     deg.degreeSort(); // sorts the vertices based on degrees, within the degeneracy order
+// #endif
 
     Graph gRec = deg.recode();
     gRec.writeBinFile(binfile);
     std::cout << "writing bins... " << std::endl;
     deg.writeBins(nbins, binfile);
+        timer.EndTimer();
+    timer.PrintElapsedMicroSeconds("preprocessing completed: ");
+
 }
 #endif
