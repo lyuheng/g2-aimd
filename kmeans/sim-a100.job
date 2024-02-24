@@ -26,7 +26,6 @@
 module load gcc
 alias python=python3
 
-
 # module load cuda11.4/toolkit
 module load GCC/11.4.0
 
