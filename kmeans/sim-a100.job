@@ -44,8 +44,9 @@ com-friendster
 '
 export OMP_NUM_THREADS 32
 for ds in $datasets; do
-./kmeans -f ~/DataBank/$ds.bin -t 32 -i 5 -k 4 > sim/$ds-kmeans.out
-./view_pack -gf ~/DataBank/$ds.bin -pf ~/DataBank/$ds.bin.kmeans.4 -h 2 -t 4 > sim/$ds-viewpack.out
-./kcore -f  ~/DataBank/$ds.bin > sim/$ds-kcore.out
+./kcore ~/DataBank/$ds.txt >> output
+# ./kmeans -f ~/DataBank/$ds.bin -t 32 -i 5 -k 4 > sim/$ds-kmeans.out
+# ./view_pack -gf ~/DataBank/$ds.bin -pf ~/DataBank/$ds.bin.kmeans.4 -h 2 -t 4 > sim/$ds-viewpack.out
+# ./kcore -f  ~/DataBank/$ds.bin > sim/$ds-kcore.out
 
 done

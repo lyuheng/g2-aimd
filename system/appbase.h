@@ -105,9 +105,9 @@ public:
 
         // leave some memory for pointers and other variables...
         free -= 500'000'000 + reserved_mem;
-        printf("Remaining : %llu\n", free);
-        free -= 40'000'000'000;
-        printf("out of 40gb Remaining : %llu\n", free);
+        // printf("Remaining : %llu\n", free);
+        // free -= 40'000'000'000;
+        // printf("out of 40gb Remaining : %llu\n", free);
 
         // sum of all the attributes size, multiply by 2, as there are two buffers...
         size_t alloc = free / (2 * sz);
