@@ -52,7 +52,7 @@
 // #define BUFFSIZE 8e8
 // tempsize is max size of a subgraph stored in temp area, This size is per warp
 // in general it should be the size of max degree of supported graph
-#define TEMPSIZE 100'000
+#define TEMPSIZE 200'000
 
 #define HOST_BUFF_SZ 20'000'000'000ULL
 #define HOST_OFFSET_SZ 1'000'000'000ULL
